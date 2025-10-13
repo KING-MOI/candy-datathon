@@ -1,0 +1,1246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Crispy Cup · Which Halloween candy should we make?</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Cpath d=%27M5 11h22l-3.2 14.5a2 2 0 0 1-2 1.5H10.2a2 2 0 0 1-2-1.5z%27 fill=%27%23e56b05%27/%3E%3Cellipse cx=%2716%27 cy=%2711%27 rx=%2711%27 ry=%273%27 fill=%27%238f4a1a%27/%3E%3C/svg%3E">
+<meta name="description" content="Which Halloween candy should we make? 83 candies and 269,000 head-to-head votes point to a chocolate peanut butter cup with crisped rice.">
+<style>
+@font-face { font-family: "Geist"; src: url(data:font/woff2;base64,__FONT_B64__) format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+:root {
+  color-scheme: light;
+  --font: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --page: #ffffff; --surface: #ffffff; --subtle: #f9fafb; --hover: #f3f4f6;
+  --border: #e5e7eb; --grid: #eef0f3; --axis: #d1d5db;
+  --ink-1: #111827; --ink-2: #4b5563; --ink-3: #6b7280; --ink-4: #9ca3af;
+  --choc: #8f4a1a; --fruit: #d43a7a; --ours: #e56b05; --other: #b8bec8;
+  --ours-wash: rgba(229, 107, 5, 0.12);
+  --neg: #c3c8d0; --pos: #111827;
+  --seq-lo: #e6effb; --seq-hi: #104281;
+  --shadow: 0 4px 12px -4px rgba(17, 24, 39, 0.16);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0b0d10; --surface: #0f1115; --subtle: #13161c; --hover: #1b1f27;
+  --border: #252a33; --grid: #1a1e25; --axis: #363c47;
+  --ink-1: #f3f4f6; --ink-2: #b9bfc9; --ink-3: #8f97a4; --ink-4: #7d8593;
+  --choc: #9a5226; --fruit: #dd5a98; --ours: #e06f12; --other: #4d5562;
+  --ours-wash: rgba(224, 111, 18, 0.16);
+  --neg: #485060; --pos: #f3f4f6;
+  --seq-lo: #16212f; --seq-hi: #86b6ef;
+  --shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.6);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0b0d10; --surface: #0f1115; --subtle: #13161c; --hover: #1b1f27;
+    --border: #252a33; --grid: #1a1e25; --axis: #363c47;
+    --ink-1: #f3f4f6; --ink-2: #b9bfc9; --ink-3: #8f97a4; --ink-4: #7d8593;
+    --choc: #9a5226; --fruit: #dd5a98; --ours: #e06f12; --other: #4d5562;
+    --ours-wash: rgba(224, 111, 18, 0.16);
+    --neg: #485060; --pos: #f3f4f6;
+    --seq-lo: #16212f; --seq-hi: #86b6ef;
+    --shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.6);
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-padding-top: 57px; scrollbar-color: var(--axis) transparent; }
+@media (min-width: 961px) and (min-height: 700px) { html { scroll-snap-type: y proximity; } }
+body { margin: 0; background: var(--page); color: var(--ink-1); font: 16px/1.5 var(--font); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: color-mix(in srgb, var(--ours) 26%, transparent); }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--ink-1); outline-offset: 2px; border-radius: 6px; }
+button { font: inherit; color: inherit; }
+b, strong { font-weight: 600; color: var(--ink-1); }
+.tnum, svg text, table, output, dd { font-variant-numeric: tabular-nums; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 12px; z-index: 50; background: var(--surface); padding: 8px 12px; border-radius: 8px; }
+
+/* header */
+.top { position: sticky; top: 0; z-index: 30; background: var(--page); border-bottom: 1px solid var(--border); }
+.top-inner { max-width: 1240px; margin: 0 auto; height: 56px; padding: 0 32px; display: flex; align-items: center; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 14.5px; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.chapters { display: flex; height: 100%; flex: 1; justify-content: center; gap: 2px; }
+.chapters a { display: flex; align-items: center; padding: 0 11px; font-size: 14px; color: var(--ink-3); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .15s; white-space: nowrap; }
+.chapters a:hover { color: var(--ink-1); }
+.chapters a[aria-current="true"] { color: var(--ink-1); border-bottom-color: var(--ink-1); font-weight: 500; }
+.stepper { display: flex; align-items: center; gap: 6px; }
+.stepper .count { font-size: 12.5px; color: var(--ink-3); min-width: 40px; text-align: right; margin-right: 4px; }
+.iconbtn { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--ink-2); cursor: pointer; transition: background .15s, color .15s; }
+.iconbtn:hover { background: var(--hover); color: var(--ink-1); }
+.iconbtn:disabled { opacity: .4; cursor: default; background: var(--surface); }
+.iconbtn .i-sun { display: none; }
+.iconbtn[data-mode="dark"] .i-sun { display: block; }
+.iconbtn[data-mode="dark"] .i-moon { display: none; }
+@media (max-width: 980px) { .chapters { display: none; } .top-inner { justify-content: space-between; padding: 0 20px; } }
+
+/* steps */
+main { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.step { min-height: calc(100svh - 57px); padding: 32px 0; display: flex; flex-direction: column; justify-content: center; scroll-snap-align: start; }
+@media (max-width: 960px), (max-height: 699px) { .step { min-height: 0; padding: 48px 0; } }
+@media (max-width: 640px) { main { padding: 0 20px; } }
+.eyebrow { font-size: 13px; font-weight: 500; color: var(--ink-3); margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+h1 { font-size: clamp(38px, 5.2vw, 70px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 650; margin: 0 0 18px; max-width: 17ch; text-wrap: balance; }
+h2 { font-size: clamp(26px, 2.75vw, 38px); line-height: 1.1; letter-spacing: -0.028em; font-weight: 640; margin: 0 0 10px; max-width: 34ch; text-wrap: balance; }
+h3 { margin: 0; }
+.dek { font-size: clamp(16px, 1.3vw, 18.5px); line-height: 1.5; color: var(--ink-2); max-width: 70ch; margin: 0 0 24px; text-wrap: pretty; }
+.hl { color: var(--ours); }
+
+/* hero */
+.hero-chart { margin-top: 6px; }
+.hero-note { font-size: 13px; color: var(--ink-3); margin: 6px 0 0; max-width: 90ch; }
+.findings { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); margin-top: 26px; }
+.finding { display: block; padding: 18px 24px 4px 0; text-decoration: none; color: inherit; }
+.finding + .finding { padding-left: 24px; border-left: 1px solid var(--border); }
+.finding .big { font-size: 34px; font-weight: 650; letter-spacing: -0.03em; line-height: 1.1; }
+.finding p { margin: 6px 0 10px; color: var(--ink-2); font-size: 15px; max-width: 36ch; }
+.go { display: inline-flex; align-items: center; gap: 4px; font-size: 13.5px; font-weight: 500; color: var(--ink-1); }
+.go svg { transition: transform .2s cubic-bezier(.16, 1, .3, 1); }
+.finding:hover .go svg { transform: translateX(3px); }
+@media (max-width: 760px) { .findings { grid-template-columns: 1fr; } .finding + .finding { padding-left: 0; border-left: 0; border-top: 1px solid var(--border); } }
+
+/* cards, panels */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: stretch; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 960px) { .split, .two { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; min-width: 0; }
+.card-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 16px; align-items: flex-start; margin-bottom: 8px; }
+.card-title { font-size: 14px; font-weight: 600; }
+.card-sub { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+.card-text { font-size: 14px; color: var(--ink-2); margin: 10px 0 0; text-wrap: pretty; }
+.panel { background: var(--subtle); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; min-width: 0; }
+.panel h3 { font-size: 19px; font-weight: 640; letter-spacing: -0.02em; line-height: 1.25; }
+.panel .meta { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+.panel-title { font-size: 12.5px; color: var(--ink-3); margin: 0 0 8px; }
+dl.stats { margin: 12px 0 0; display: grid; grid-template-columns: 1fr auto; }
+dl.stats dt, dl.stats dd { padding: 8px 0; border-top: 1px solid var(--border); font-size: 13.5px; }
+dl.stats dt { color: var(--ink-2); display: flex; align-items: center; gap: 8px; }
+dl.stats dd { margin: 0; text-align: right; font-weight: 600; padding-left: 12px; }
+.verdict { margin: 12px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--ink-1); text-wrap: pretty; }
+.clist { list-style: none; margin: 12px 0 0; padding: 0; font-size: 13px; color: var(--ink-2); }
+.clist li { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 4px 0; }
+.clist li span:nth-child(2) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.clist li b { font-weight: 600; }
+.clist .more { display: block; color: var(--ink-3); padding-top: 4px; }
+
+.ctabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); flex: 1 1 300px; }
+.ctabs button { background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 6px 10px 9px; font-size: 14px; color: var(--ink-3); cursor: pointer; white-space: nowrap; }
+.ctabs button:hover { color: var(--ink-1); }
+.ctabs button[aria-selected="true"] { color: var(--ink-1); border-bottom-color: var(--ink-1); font-weight: 500; }
+
+.btn { height: 32px; padding: 0 11px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-1); font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; transition: background .15s; }
+.btn:hover { background: var(--hover); }
+.btn[aria-pressed="true"] { background: var(--hover); border-color: var(--ink-4); }
+.badge { display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 6px; font-size: 12px; font-weight: 500; background: var(--hover); color: var(--ink-1); border: 1px solid var(--border); white-space: nowrap; }
+.badge.ours { background: var(--ours-wash); border-color: color-mix(in srgb, var(--ours) 45%, transparent); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink-2); margin: 4px 0 4px; }
+.legend > span { display: inline-flex; align-items: center; gap: 6px; }
+.key { width: 10px; height: 10px; border-radius: 3px; flex: none; display: inline-block; }
+.key.dot { border-radius: 50%; }
+.key.ring { border-radius: 50%; background: transparent !important; border: 2px solid var(--ink-1); }
+.key.diamond { width: 9px; height: 9px; border-radius: 1px; transform: rotate(45deg); }
+.key.line { height: 2px; width: 14px; border-radius: 1px; }
+.key.dash { height: 0; width: 14px; border-radius: 0; border-top: 2px dashed var(--ink-3); background: none !important; }
+.chart { width: 100%; }
+.chart svg { display: block; overflow: visible; }
+
+/* svg text */
+svg text { font-family: var(--font); }
+.tick { fill: var(--ink-3); font-size: 12px; }
+.axis-title { fill: var(--ink-3); font-size: 12px; }
+.lbl { fill: var(--ink-2); font-size: 13px; }
+.lbl.on { fill: var(--ink-1); font-weight: 600; }
+.lbl2 { fill: var(--ink-3); font-size: 12px; }
+.ann { fill: var(--ink-2); font-size: 12px; }
+.ann-strong { fill: var(--ink-1); font-size: 12.5px; font-weight: 600; }
+.halo { paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
+.hit { cursor: pointer; }
+.hit:focus-visible { outline: none; }
+.cell-v { font-size: 13px; font-weight: 600; }
+.cell-n { font-size: 10.5px; }
+
+/* details */
+.sure { margin-top: 16px; max-width: 92ch; }
+.sure summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--ink-2); padding: 4px 0; }
+.sure summary::-webkit-details-marker { display: none; }
+.sure summary:hover { color: var(--ink-1); }
+.sure summary svg { transition: transform .2s cubic-bezier(.16, 1, .3, 1); }
+.sure[open] summary svg { transform: rotate(90deg); }
+.sure .body { font-size: 14px; color: var(--ink-2); line-height: 1.6; padding: 4px 0 0 20px; }
+.sure .body p { margin: 0 0 10px; max-width: 86ch; }
+.disclosures { display: flex; flex-wrap: wrap; gap: 0 28px; }
+.disclosures .sure { margin-top: 14px; }
+.disclosures .sure[open] { flex-basis: 100%; }
+.method code { font-size: 12.5px; background: var(--hover); padding: 1px 5px; border-radius: 4px; }
+
+/* tables */
+.tablewrap { margin-top: 12px; max-height: 320px; overflow: auto; border: 1px solid var(--border); border-radius: 8px; }
+table.data { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+table.data th, table.data td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+table.data th { position: sticky; top: 0; background: var(--subtle); font-weight: 500; color: var(--ink-2); }
+.n { text-align: right !important; }
+
+/* our candy */
+.recipe { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px; }
+@media (max-width: 1000px) { .recipe { grid-template-columns: 1fr; } }
+.rcard { border: 1px solid color-mix(in srgb, var(--ours) 40%, var(--border)); border-radius: 12px; padding: 20px 22px; background: linear-gradient(180deg, var(--ours-wash), transparent 140px), var(--surface); }
+.rcard h3 { font-size: 28px; font-weight: 660; letter-spacing: -0.028em; line-height: 1.1; display: flex; align-items: center; gap: 12px; }
+.rcard .pitch { font-size: 15px; color: var(--ink-2); margin: 8px 0 14px; max-width: 52ch; }
+.forecast { display: flex; gap: 28px; flex-wrap: wrap; padding: 12px 0 14px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.forecast .fv { font-size: 30px; font-weight: 650; letter-spacing: -0.03em; line-height: 1.1; }
+.forecast .fl { font-size: 12.5px; color: var(--ink-3); }
+table.why { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 13.5px; }
+table.why td { padding: 7px 0; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink-2); }
+table.why tr:last-child td { border-bottom: 0; }
+table.why td:first-child { color: var(--ink-1); font-weight: 560; width: 34%; padding-right: 12px; white-space: nowrap; }
+table.why td:last-child { text-align: right; white-space: nowrap; padding-left: 12px; font-weight: 600; color: var(--ink-1); }
+table.lineup { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 8px; }
+table.lineup th { text-align: left; font-size: 12px; font-weight: 500; color: var(--ink-3); padding: 0 12px 8px 0; border-bottom: 1px solid var(--border); }
+table.lineup td { padding: 7px 12px 7px 0; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink-2); }
+table.lineup tr:last-child td { border-bottom: 0; }
+table.lineup td.nm { color: var(--ink-1); font-weight: 600; min-width: 150px; }
+table.lineup td:nth-child(2) { white-space: nowrap; }
+table.lineup td.nm span { display: inline; margin-left: 6px; font-weight: 400; font-size: 12px; color: var(--ink-3); }
+table.lineup tr.pick td.nm { color: var(--ink-1); }
+table.lineup tr.pick { background: linear-gradient(90deg, var(--ours-wash), transparent 70%); }
+table.lineup tr.pick td:first-child { box-shadow: inset 3px 0 0 var(--ours); padding-left: 10px; }
+table.lineup td:first-child { padding-left: 10px; }
+@media (max-width: 760px) {
+  table.lineup thead { display: none; }
+  table.lineup tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  table.lineup td { display: block; border: 0; padding: 3px 10px; }
+  table.lineup td[data-label]::before { content: attr(data-label) ": "; color: var(--ink-3); }
+}
+
+/* lab */
+.lab { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 24px; }
+@media (max-width: 960px) { .lab { grid-template-columns: 1fr; } }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-2); font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: background .12s, color .12s, border-color .12s; }
+.chip:hover { background: var(--hover); color: var(--ink-1); }
+.chip[aria-pressed="true"] { background: var(--ink-1); border-color: var(--ink-1); color: var(--page); font-weight: 500; }
+.chip .pts { font-size: 11.5px; opacity: .75; font-variant-numeric: tabular-nums; }
+.ctl-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 13.5px; font-weight: 500; margin: 18px 0 8px; }
+.ctl-label:first-child { margin-top: 0; }
+.ctl-label output { font-weight: 600; }
+input[type="range"] { width: 100%; accent-color: var(--ink-1); margin: 0; }
+.help { font-size: 12.5px; color: var(--ink-3); margin: 4px 0 0; }
+.presets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.lab-out .big { font-size: clamp(44px, 5vw, 64px); font-weight: 660; letter-spacing: -0.04em; line-height: 1; }
+.lab-top { display: flex; flex-wrap: wrap; gap: 12px 36px; align-items: flex-end; }
+.lab-top .fl { font-size: 12.5px; color: var(--ink-3); margin-top: 4px; }
+.lab-top .mid { font-size: 22px; font-weight: 620; letter-spacing: -0.02em; line-height: 1.2; }
+.warn { margin-top: 14px; font-size: 13.5px; color: var(--ink-2); border-left: 3px solid var(--ours); padding: 6px 0 6px 12px; text-wrap: pretty; }
+.warn.ok { border-left-color: var(--axis); }
+
+ul.limits { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
+ul.limits li { padding: 11px 0; border-top: 1px solid var(--border); color: var(--ink-2); font-size: 14px; }
+ul.limits li b { display: block; font-size: 14.5px; }
+footer { max-width: 1240px; margin: 0 auto; padding: 24px 32px 40px; font-size: 12.5px; color: var(--ink-3); border-top: 1px solid var(--border); }
+
+.tip { position: fixed; z-index: 60; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow); padding: 8px 11px; font-size: 12.5px; opacity: 0; transition: opacity .12s; max-width: 300px; }
+.tip .t { font-weight: 600; margin-bottom: 4px; color: var(--ink-1); }
+.tip .r { display: flex; align-items: center; gap: 7px; color: var(--ink-2); white-space: nowrap; }
+.tip .v { font-weight: 600; color: var(--ink-1); font-variant-numeric: tabular-nums; }
+@media print { .top, .btn, .stepper { display: none; } .step { min-height: 0; break-inside: avoid; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#answer">Skip to content</a>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#answer">
+      <svg width="20" height="18" viewBox="0 0 32 28" aria-hidden="true"><path d="M3 7h26l-3.6 16.4a2.4 2.4 0 0 1-2.3 1.9H8.9a2.4 2.4 0 0 1-2.3-1.9z" style="fill:var(--ours)"/><ellipse cx="16" cy="7" rx="13" ry="3.6" style="fill:var(--choc)"/></svg>
+      The Crispy Cup
+    </a>
+    <nav class="chapters" aria-label="Chapters">
+      <a href="#answer" data-ch="answer">Answer</a>
+      <a href="#ingredients" data-ch="wins">What wins</a>
+      <a href="#traps" data-ch="fails">What fails</a>
+      <a href="#candy" data-ch="candy">Our candy</a>
+      <a href="#lab" data-ch="lab">Try a recipe</a>
+      <a href="#limits" data-ch="limits">Limits</a>
+    </nav>
+    <div class="stepper">
+      <span class="count" id="stepnum" aria-live="polite"></span>
+      <button class="iconbtn" id="prev" type="button" aria-label="Previous screen"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 10l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="iconbtn" id="next" type="button" aria-label="Next screen"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="iconbtn" id="theme" type="button" aria-label="Switch theme">
+        <svg class="i-moon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 9.6A5.6 5.6 0 0 1 6.4 2.8a5.6 5.6 0 1 0 6.8 6.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- 1. answer -->
+<section class="step" id="answer" data-ch="answer" aria-labelledby="h-answer">
+  <p class="eyebrow">Which Halloween candy should we make?</p>
+  <h1 id="h-answer">Make a peanut butter cup with a <span class="hl">crunch</span>.</h1>
+  <p class="dek">We scored <b data-k="S.n"></b> candies on what is inside them against 269,000 head-to-head votes. Chocolate and peanut butter win the most votes and have the most evidence behind them. Adding crisped rice gives the <b>Crispy Cup</b>, which forecasts at <b data-k="D.crispyRange"></b> on our two models. That would be a top-<span data-k="D.crispyWorstRank"></span> candy.</p>
+  <figure class="card hero-chart" style="margin:0">
+    <div class="card-head">
+      <div><div class="card-title">Every candy by share of matchups won</div><div class="card-sub">Each dot is one candy. Hover for its name.</div></div>
+      <div class="legend" id="hero-legend"></div>
+    </div>
+    <div class="chart" id="hero" role="img" aria-label="Beeswarm of 83 candies by win rate, with chocolate candies clustered at the top"></div>
+  </figure>
+  <p class="hero-note">Win rate is the share of random one-on-one matchups a candy won in FiveThirtyEight's 2017 poll. The data has no sales figures, so we treat win rate as demand. FiveThirtyEight also put a dime and a quarter in the poll. <b data-k="S.below_quarter"></b> of <span data-k="S.n"></span> candies lose to a quarter.</p>
+  <div class="findings">
+    <a class="finding" href="#ingredients"><div class="big" data-k="D.chocPts"></div><p>points of win rate for chocolate, with every other trait held fixed. Peanut butter adds <span data-k="D.peanutPts"></span>.</p><span class="go">What wins <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a class="finding" href="#traps"><div class="big">1 of <span data-k="S.n"></span></div><p>candies mixes chocolate with fruit. It finished <span data-k="D.hybridRank"></span>, so the host's example idea has little support.</p><span class="go">What fails <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a class="finding" href="#candy"><div class="big" data-k="D.crispPos"></div><p>of 4,000 resampled models say crisp rice adds points to a peanut butter cup. That's the one bet in our recipe.</p><span class="go">Our candy <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  </div>
+</section>
+
+<!-- 2. ingredients -->
+<section class="step" id="ingredients" data-ch="wins" aria-labelledby="h-ing">
+  <p class="eyebrow">What wins</p>
+  <h2 id="h-ing">Chocolate adds 21 points. Peanut butter adds 11. Most other traits barely move the score.</h2>
+  <p class="dek">Each row is one trait's effect on win rate with the other ten held fixed, from a regression on all <span data-k="S.n"></span> candies. Click a row to see the candies behind it.</p>
+  <div class="split">
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title">Change in win rate from each trait</div><div class="card-sub">Points, with 95% intervals. Sugar and price run from the lowest to the highest in the set.</div></div>
+        <div class="legend" id="eff-legend"></div>
+      </div>
+      <div class="chart" id="effects"></div>
+      <div data-table-for="effects" hidden></div>
+      <button class="btn" type="button" data-toggle-table="effects" style="margin-top:8px">Show as table</button>
+    </div>
+    <aside class="panel" id="eff-panel" aria-live="polite"></aside>
+  </div>
+  <div class="disclosures">
+    <details class="sure"><summary><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Why fruit looks bad raw but positive here</summary>
+      <div class="body"><p>Fruit candies win <b data-k="D.fruitRaw"></b> fewer points than the rest, but most of "the rest" is chocolate. With chocolate held fixed, fruit is compared with the other non-chocolate candies: candy corn, root beer barrels, Boston Baked Beans, Sugar Daddy. Against those, fruit adds <b data-k="D.fruitPts"></b>. That bonus says nothing about adding fruit to chocolate, which is the trap in the host's example.</p></div>
+    </details>
+    <details class="sure"><summary><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>How sure are we</summary>
+      <div class="body method"><p>Effects come from an ordinary least squares regression of win rate on the nine yes/no traits plus sugar and price percentiles (n = <span data-k="M.n"></span>, R² = <span data-k="D.r2"></span>, F-test p = <span data-k="D.fp"></span>). Intervals use HC3 robust standard errors, which hold up when some candies are noisier than others. Raw gaps are tested with 20,000-shuffle permutation tests. We also refit the model on 4,000 bootstrap resamples of the candies and count how often each effect stays on the same side of zero.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- 3. pairs -->
+<section class="step" id="pairs" data-ch="wins" aria-labelledby="h-pairs">
+  <p class="eyebrow">What wins together</p>
+  <h2 id="h-pairs">Chocolate's best partner is peanut butter. Chocolate and fruit have met once.</h2>
+  <p class="dek">The pairing map shows the average win rate of candies that have both traits, and how many there are. Stronger blue means a higher win rate. A dashed cell means only one real candy has that pair, and a blank cell means none do. Click a cell to see the candies.</p>
+  <div class="split">
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title">Pairing map: average win rate of candies with both traits</div><div class="card-sub">The diagonal shows candies with that one trait.</div></div>
+        <div class="legend" id="pair-legend"></div>
+      </div>
+      <div class="chart" id="pairmap"></div>
+    </div>
+    <aside class="panel" id="pair-panel" aria-live="polite"></aside>
+  </div>
+</section>
+
+<!-- 4. price & sugar -->
+<section class="step" id="price" data-ch="wins" aria-labelledby="h-price">
+  <p class="eyebrow">What doesn't matter as much</p>
+  <h2 id="h-price">A higher price doesn't buy votes. Pricier candy wins because it's usually chocolate.</h2>
+  <p class="dek">Across all candies, price and win rate rise together (r = <span data-k="D.rAll"></span>). Among chocolate candies alone the link is weak (r = <span data-k="D.rChoc"></span>, p = <span data-k="D.pChoc"></span>). With ingredients held fixed, price has no clear effect, so the Crispy Cup can sit at a middle price. Sugar is the reverse: it helps a little even after ingredients.</p>
+  <div class="split">
+    <div class="card">
+      <div class="card-head">
+        <div class="ctabs" role="tablist" aria-label="Measure">
+          <button type="button" role="tab" id="tab-price" data-tab="pricepercent" aria-selected="true" aria-controls="scatter">Price</button>
+          <button type="button" role="tab" id="tab-sugar" data-tab="sugarpercent" aria-selected="false" aria-controls="scatter" tabindex="-1">Sugar</button>
+        </div>
+        <div class="legend" id="sc-legend"></div>
+      </div>
+      <div class="chart" id="scatter" role="tabpanel"></div>
+    </div>
+    <aside class="panel" id="sc-panel" aria-live="polite"></aside>
+  </div>
+</section>
+
+<!-- 5. traps -->
+<section class="step" id="traps" data-ch="fails" aria-labelledby="h-traps">
+  <p class="eyebrow">What fails</p>
+  <h2 id="h-traps">Two ideas look good on paper and fail against real candy.</h2>
+  <p class="dek">Adding up trait bonuses only works for combinations that real candies have tried. These two have barely been tried, and the closest real examples lost to their own forecasts.</p>
+  <div class="two">
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">Chocolate with fruit, the host's example</div><div class="card-sub"><span data-k="D.hybridCount"></span> of <span data-k="S.n"></span> candies has both</div></div></div>
+      <div class="chart" id="hybrid"></div>
+      <p class="card-text">The model adds the chocolate bonus to the fruit bonus and forecasts Tootsie Pop at <b data-k="D.tpPred"></b>. It won <b data-k="D.tpWin"></b> and finished <span data-k="D.hybridRank"></span>. Chocolate and fruit almost never appear together (Cramér's V = <span data-k="D.cramer"></span>), so the data can't vouch for the pair.</p>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">The everything bar</div><div class="card-sub">Chocolate candies by number of add-ins (caramel, peanut, nougat, crisp)</div></div></div>
+      <div class="chart" id="addins"></div>
+      <p class="card-text">Chocolate candies average <b data-k="D.add0"></b> with no add-ins and <b data-k="D.add2"></b> with two, then drop to <b data-k="D.add3"></b> with three. Snickers Crisper stacks caramel, peanut and crisp. The model forecast <b data-k="D.crisperPred"></b> and it won <b data-k="D.crisperWin"></b>, the biggest miss of any candy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. our candy -->
+<section class="step" id="candy" data-ch="candy" aria-labelledby="h-candy">
+  <p class="eyebrow">Our candy</p>
+  <h2 id="h-candy">The Crispy Cup forecasts at <span data-k="D.crispyRange"></span>, top <span data-k="D.crispyWorstRank"></span> on both models.</h2>
+  <p class="dek">Chocolate plus peanut butter is the proven core. Twelve real candies have it, including the top two. Crisp rice is the one bet, and both models agree it won't hurt.</p>
+  <div class="recipe">
+    <div class="rcard">
+      <h3><svg width="30" height="26" viewBox="0 0 32 28" aria-hidden="true"><path d="M3 7h26l-3.6 16.4a2.4 2.4 0 0 1-2.3 1.9H8.9a2.4 2.4 0 0 1-2.3-1.9z" style="fill:var(--ours)"/><ellipse cx="16" cy="7" rx="13" ry="3.6" style="fill:var(--choc)"/></svg>The Crispy Cup</h3>
+      <p class="pitch" data-k="D.crispyPitch"></p>
+      <div class="forecast">
+        <div><div class="fv" data-k="D.crispyOls"></div><div class="fl">Regression forecast</div></div>
+        <div><div class="fv" data-k="D.crispyRf"></div><div class="fl">Random forest forecast</div></div>
+        <div><div class="fv" data-k="D.crispyQuarter"></div><div class="fl">Resamples beating a quarter</div></div>
+      </div>
+      <table class="why" id="why"></table>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title">Five recipes we tested, two models each</div><div class="card-sub">Forecast win rate. The line shows the regression's 95% interval.</div></div>
+        <div class="legend" id="lu-legend"></div>
+      </div>
+      <div class="chart" id="lineup-chart"></div>
+      <table class="lineup" id="lineup"></table>
+    </div>
+  </div>
+</section>
+
+<!-- 7. lab -->
+<section class="step" id="lab" data-ch="lab" aria-labelledby="h-lab">
+  <p class="eyebrow">Try a recipe</p>
+  <h2 id="h-lab">Test any recipe, including the host's.</h2>
+  <p class="dek">Pick traits to get a forecast and the real candies closest to it. The lab warns you when a recipe uses trait pairs that real candies have rarely tried, because the forecast there is a guess.</p>
+  <div class="card lab">
+    <div>
+      <div class="ctl-label">Traits</div>
+      <div class="chips" id="chips"></div>
+      <label class="ctl-label" for="sugar">Sugar <output id="sugar-out"></output></label>
+      <input type="range" id="sugar" min="0" max="100" step="1">
+      <label class="ctl-label" for="pricein">Price <output id="price-out"></output></label>
+      <input type="range" id="pricein" min="0" max="100" step="1">
+      <p class="help">Percentile within the 85 items, lowest to highest.</p>
+      <div class="ctl-label">Start from</div>
+      <div class="presets" id="presets"></div>
+    </div>
+    <div class="lab-out" aria-live="polite">
+      <div class="lab-top">
+        <div><div class="big" id="lab-pred"></div><div class="fl">Forecast win rate</div></div>
+        <div><div class="mid" id="lab-ci"></div><div class="fl">95% interval</div></div>
+        <div><div class="mid" id="lab-rank"></div><div class="fl">Place among <span data-k="S.n"></span> real candies</div></div>
+        <div><div class="mid" id="lab-q"></div><div class="fl">Chance it beats a quarter</div></div>
+      </div>
+      <div class="chart" id="lab-strip" style="margin-top:14px"></div>
+      <div id="lab-warn"></div>
+      <div class="panel-title" style="margin-top:16px">Closest real candies</div>
+      <ul class="clist" id="lab-near"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8. limits -->
+<section class="step" id="limits" data-ch="limits" aria-labelledby="h-limits">
+  <p class="eyebrow">Limits</p>
+  <h2 id="h-limits">Ingredients explain a third to a half of a candy's score. Brand and execution explain the rest.</h2>
+  <p class="dek">Tested on candies it didn't see, the recipe model cuts forecast error from <span data-k="D.baseMae"></span> to <span data-k="D.looMae"></span> points. The biggest misses are brands. Reese's and Twix beat their recipes by about 20 points. The Crispy Cup still needs a good product behind the recipe.</p>
+  <div class="split">
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title">Candies that beat or missed their recipe the most</div><div class="card-sub">Forecast from the other 82 candies, then the actual result</div></div>
+        <div class="legend" id="res-legend"></div>
+      </div>
+      <div class="chart" id="resid"></div>
+    </div>
+    <div>
+      <ul class="limits">
+        <li><b>Votes, not sales.</b>Win rate measures which candy people pick in a head-to-head. The data has no sales or market share.</li>
+        <li><b>One online poll from 2017.</b>8,371 IP addresses voted on random pairs. There is no location data, so we drew a pairing map instead of a geographic one.</li>
+        <li><b>Percentiles, not grams or dollars.</b>Sugar and price are ranks within these 85 items.</li>
+        <li><b>83 candies is a small sample.</b>Intervals are wide, and rare traits like crisp (7 candies) and nougat (7) are uncertain.</li>
+        <li><b>Brand is mixed in.</b>Four Reese's products sit in the top 12, so "peanut butter" and "Reese's" can't be fully separated.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclosures">
+    <details class="sure"><summary><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Method and tests</summary>
+      <div class="body method">
+        <p><b>Data.</b> <code>candy-data.csv</code> from Kaggle (FiveThirtyEight, 2017): 85 rows, 9 yes/no traits, sugar and price percentiles, and win rate from about 269,000 matchups. We dropped the dime and quarter from every model and kept them as reference lines.</p>
+        <p><b>Raw gaps.</b> Mean win rate with and without each trait, with 5,000-draw bootstrap intervals and 20,000-shuffle permutation tests.</p>
+        <p><b>Regression.</b> OLS on 11 terms with HC3 robust errors. In sample R² = <span data-k="D.r2"></span>, adjusted R² = <span data-k="D.adjr2"></span>. Leave-one-out R² = <span data-k="D.looR2"></span>, mean absolute error <span data-k="D.looMae"></span> points against <span data-k="D.baseMae"></span> for guessing the average.</p>
+        <p><b>Second model.</b> A random forest (500 trees, at least 3 candies per leaf) reached leave-one-out R² = <span data-k="D.rfR2"></span>. A forest only predicts from combinations it has seen, so it can't reward a pairing no candy has tried. That makes it a check on the regression's guesses about untried pairs.</p>
+        <p><b>Robustness.</b> 4,000 bootstrap refits of the regression give the "share of resamples" figures and the forecast ranges.</p>
+      </div>
+    </details>
+    <details class="sure" id="all-details"><summary><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>All 85 rows</summary>
+      <div class="body" style="padding-left:0"><div data-table-for="all"></div></div>
+    </details>
+  </div>
+</section>
+</main>
+<footer>Data: <a href="https://www.kaggle.com/datasets/fivethirtyeight/the-ultimate-halloween-candy-power-ranking">The Ultimate Halloween Candy Power Ranking</a> by FiveThirtyEight (2017), via Kaggle. The Crispy Cup is our concept, not a real product. Press the arrow keys to move between screens.</footer>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>/*__D3__*/</script>
+<script>
+/*__DATA__*/
+(() => {
+'use strict';
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const MINUS = '−';
+const v = n => `var(${n})`;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+
+const F = {
+  win: x => `${Math.round(clamp(x, 0, 100))}%`,
+  win1: x => `${clamp(x, 0, 100).toFixed(1)}%`,
+  pts: x => `${x < 0 ? MINUS : '+'}${Math.abs(Math.round(x))}`,
+  pts1: x => `${x < 0 ? MINUS : '+'}${Math.abs(x).toFixed(1)}`,
+  pct: x => `${Math.round(x * 100)}%`,
+  pct1: x => `${(x * 100).toFixed(1)}%`,
+  pctile: x => ordinal(Math.round(x * 100)),
+  r: x => (x < 0 ? MINUS : '') + Math.abs(x).toFixed(2),
+  p: x => x < 0.0001 ? '< 0.0001' : x < 0.001 ? x.toFixed(4) : x < 0.01 ? x.toFixed(3) : x.toFixed(2),
+};
+function ordinal(n) { const s = ['th', 'st', 'nd', 'rd'], m = n % 100; return n + (s[(m - 20) % 10] || s[m] || s[0]); }
+const pctileShort = x => ordinal(Math.round(x * 100));
+
+const FEAT = DATA.features.map(f => f.key);
+const TERMS = DATA.terms.map(t => t.key);
+const LBL = Object.fromEntries(DATA.terms.map(t => [t.key, t.label]));
+const SHORT = { chocolate: 'Chocolate', fruity: 'Fruit', caramel: 'Caramel', peanutyalmondy: 'Peanut', nougat: 'Nougat', crispedricewafer: 'Crisp', hard: 'Hard', bar: 'Bar', pluribus: 'Pack', sugarpercent: 'Sugar', pricepercent: 'Price' };
+const ALL = DATA.candies;
+const CANDY = ALL.filter(d => d.candy);
+const COINS = ALL.filter(d => !d.candy);
+const has = (d, f) => d.t[FEAT.indexOf(f)] === 1;
+const base = d => has(d, 'chocolate') ? 'choc' : has(d, 'fruity') ? 'fruit' : 'other';
+const BASE_VAR = { choc: '--choc', fruit: '--fruit', other: '--other' };
+const BASE_LABEL = { choc: 'Chocolate', fruit: 'Fruit, no chocolate', other: 'Neither' };
+const M = DATA.model, S = DATA.summary, B = DATA.boot, H = DATA.hybrid, P = DATA.price;
+const LU = Object.fromEntries(DATA.lineup.map(r => [r.id, r]));
+const COEF = Object.fromEntries(M.coefs.map(c => [c.key, c]));
+const LIFT = Object.fromEntries(DATA.lifts.map(l => [l.key, l]));
+const wins = CANDY.map(d => d.win);
+const rankOf = x => wins.filter(w => w > x).length + 1;
+const pairOf = (a, b) => DATA.pairs.find(p => (p.a === a && p.b === b));
+const addin = k => DATA.addins.find(a => a.count === k);
+
+const crispy = LU.crispy;
+const crispyLo = Math.min(crispy.pred, crispy.rf), crispyHi = Math.max(crispy.pred, crispy.rf);
+const D = {
+  crispyRange: `${Math.round(crispyLo)} to ${Math.round(crispyHi)}%`,
+  crispyWorstRank: String(Math.max(rankOf(crispy.pred), rankOf(crispy.rf))),
+  crispyOls: F.win(crispy.pred), crispyRf: F.win(crispy.rf), crispyQuarter: F.pct(crispy.p_beat_quarter),
+  crispyPitch: crispy.pitch,
+  chocPts: F.pts(COEF.chocolate.b), peanutPts: F.pts(COEF.peanutyalmondy.b), fruitPts: F.pts(COEF.fruity.b) + ' points',
+  fruitRaw: Math.abs(Math.round(LIFT.fruity.diff)) + ' points',
+  crispPos: F.pct(B.p_pos.crispedricewafer),
+  hybridRank: ordinal(H.rank), hybridCount: String(pairOf('chocolate', 'fruity') ? pairOf('chocolate', 'fruity').n : 1),
+  tpPred: F.win(H.pred_loo), tpWin: F.win(H.win), cramer: H.cramers_v.toFixed(2),
+  add0: F.win(addin(0).mean), add2: F.win(addin(2).mean), add3: F.win(addin(3).mean),
+  crisperPred: F.win(DATA.crisper.pred), crisperWin: F.win(DATA.crisper.win),
+  rAll: F.r(P.r_all), rChoc: F.r(P.r_choc), pChoc: F.p(P.p_choc),
+  r2: M.r2.toFixed(2), adjr2: M.adj_r2.toFixed(2), fp: F.p(M.f_p), looR2: M.loo_r2.toFixed(2), looMae: M.loo_mae.toFixed(1), baseMae: M.base_mae.toFixed(1), rfR2: M.rf_loo_r2.toFixed(2),
+};
+const ctx = { D, S, M };
+const get = (o, path) => path.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
+function bind() {
+  $$('[data-k]').forEach(el => {
+    const val = get(ctx, el.dataset.k);
+    if (val == null) return;
+    el.textContent = el.dataset.f ? F[el.dataset.f](val) : String(val);
+  });
+}
+
+// ---------- model maths ----------
+function xvec(on, sugar, price) { return [1, ...FEAT.map(f => on.has(f) ? 1 : 0), sugar, price]; }
+function predict(x) {
+  const p = d3.sum(x, (xi, i) => xi * M.beta[i]);
+  let q = 0;
+  for (let i = 0; i < x.length; i++) for (let j = 0; j < x.length; j++) q += x[i] * M.cov[i][j] * x[j];
+  const se = Math.sqrt(Math.max(q, 0));
+  return { p, se, lo: p - 1.96 * se, hi: p + 1.96 * se };
+}
+function phi(z) { // standard normal CDF
+  const t = 1 / (1 + 0.2316419 * Math.abs(z));
+  const d = 0.3989423 * Math.exp(-z * z / 2);
+  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+  return z > 0 ? 1 - p : p;
+}
+function nearestReal(on, sugar, k = 3) {
+  const bits = FEAT.map(f => on.has(f) ? 1 : 0);
+  return CANDY.map(d => ({ d, dist: d3.sum(d.t, (b, i) => Math.abs(b - bits[i])), sd: Math.abs(d.sugar - sugar) }))
+    .sort((a, b) => a.dist - b.dist || a.sd - b.sd || b.d.win - a.d.win).slice(0, k);
+}
+const pairCount = (a, b) => { const i = FEAT.indexOf(a), j = FEAT.indexOf(b); const [x, y] = i > j ? [a, b] : [b, a]; const p = DATA.pairs.find(q => q.a === x && q.b === y); return p ? p.n : 0; };
+
+// ---------- tooltip ----------
+const tipEl = $('#tip');
+function tip(evt, title, rows) {
+  tipEl.replaceChildren();
+  const t = document.createElement('div'); t.className = 't'; t.textContent = title; tipEl.appendChild(t);
+  rows.forEach(r => {
+    const row = document.createElement('div'); row.className = 'r';
+    if (r.color) { const k = document.createElement('span'); k.className = 'key dot'; k.style.background = r.color; row.appendChild(k); }
+    const val = document.createElement('span'); val.className = 'v'; val.textContent = r.value; row.appendChild(val);
+    if (r.label) { const l = document.createElement('span'); l.textContent = r.label; row.appendChild(l); }
+    tipEl.appendChild(row);
+  });
+  let x, y;
+  if (evt && evt.clientX !== undefined && String(evt.type).startsWith('pointer')) { x = evt.clientX; y = evt.clientY; }
+  else { const b = evt.target.getBoundingClientRect(); x = b.left + b.width / 2; y = b.top; }
+  tipEl.style.opacity = 1;
+  const w = tipEl.offsetWidth, h = tipEl.offsetHeight;
+  let left = x + 14, top = y - h - 12;
+  if (left + w > innerWidth - 8) left = x - w - 14;
+  if (top < 64) top = y + 18;
+  tipEl.style.left = `${left}px`; tipEl.style.top = `${top}px`;
+}
+const untip = () => { tipEl.style.opacity = 0; };
+const candyTip = (e, d) => tip(e, d.name, [
+  { color: d.candy ? v(BASE_VAR[base(d)]) : v('--ink-1'), value: F.win1(d.win), label: 'of matchups won' },
+  ...(d.candy ? [{ value: ordinal(rankOf(d.win)), label: `of ${S.n} candies` }, { value: traitText(d) || 'no listed traits', label: '' }] : [{ value: 'Control', label: 'not a candy' }]),
+]);
+const traitText = d => FEAT.filter(f => has(d, f)).map(f => SHORT[f].toLowerCase()).join(', ');
+
+// ---------- table views ----------
+const TABLES = {};
+function registerTable(id, cols, rows) {
+  TABLES[id] = { cols, rows };
+  const w = $(`[data-table-for="${id}"]`);
+  if (w && !w.hidden) drawTable(w, TABLES[id]);
+}
+function drawTable(w, { cols, rows }) {
+  w.replaceChildren();
+  const wrap = document.createElement('div'); wrap.className = 'tablewrap';
+  const t = document.createElement('table'); t.className = 'data';
+  const thead = t.createTHead().insertRow();
+  cols.forEach(c => { const th = document.createElement('th'); th.textContent = c.label; if (c.num) th.className = 'n'; thead.appendChild(th); });
+  const tb = t.createTBody();
+  rows.forEach(r => { const tr = tb.insertRow(); r.forEach((cell, i) => { const td = tr.insertCell(); td.textContent = cell; if (cols[i].num) td.className = 'n'; }); });
+  wrap.appendChild(t); w.appendChild(wrap);
+}
+$$('[data-toggle-table]').forEach(btn => btn.addEventListener('click', () => {
+  const id = btn.dataset.toggleTable, w = $(`[data-table-for="${id}"]`);
+  w.hidden = !w.hidden;
+  btn.textContent = w.hidden ? 'Show as table' : 'Hide table';
+  if (!w.hidden && TABLES[id]) drawTable(w, TABLES[id]);
+}));
+
+// ---------- svg helpers ----------
+function svgIn(el, height) {
+  const w = Math.max(280, el.clientWidth);
+  el.replaceChildren();
+  const svg = d3.select(el).append('svg').attr('width', w).attr('height', height).attr('viewBox', `0 0 ${w} ${height}`);
+  return { svg, w };
+}
+function legend(el, items) {
+  el.replaceChildren();
+  items.forEach(it => {
+    const s = document.createElement('span');
+    const k = document.createElement('span'); k.className = `key ${it.shape || ''}`;
+    if (it.color) k.style.background = it.color;
+    if (it.border) k.style.borderColor = it.border;
+    s.appendChild(k); s.appendChild(document.createTextNode(it.label)); el.appendChild(s);
+  });
+}
+function xAxis(svg, x, y, ticks, fmt, cls = 'tick') {
+  const g = svg.append('g');
+  ticks.forEach(t => g.append('text').attr('class', cls).attr('x', x(t)).attr('y', y).attr('text-anchor', 'middle').text(fmt(t)));
+  return g;
+}
+function diamond(g, cx, cy, r, fill, stroke) {
+  return g.append('path').attr('d', `M${cx},${cy - r}L${cx + r},${cy}L${cx},${cy + r}L${cx - r},${cy}Z`).style('fill', fill).style('stroke', stroke || v('--surface')).style('stroke-width', 2);
+}
+const nameOf = n => n;
+
+// ---------- 1. hero beeswarm ----------
+function dodge(items, xf, r, pad = 1.5) {
+  const placed = [];
+  const sorted = [...items].sort((a, b) => xf(a) - xf(b));
+  const out = new Map();
+  const dmin = 2 * r + pad;
+  for (const d of sorted) {
+    const x = xf(d);
+    const near = placed.filter(p => Math.abs(p.x - x) < dmin);
+    let y = 0;
+    for (let k = 0; k < 400; k++) {
+      const cand = k === 0 ? 0 : (k % 2 ? 1 : -1) * Math.ceil(k / 2) * (r * 0.5);
+      if (near.every(p => (p.x - x) ** 2 + (p.y - cand) ** 2 >= dmin * dmin)) { y = cand; break; }
+    }
+    placed.push({ x, y }); out.set(d, y);
+  }
+  return out;
+}
+function renderHero() {
+  const el = $('#hero');
+  const narrow = el.clientWidth < 640;
+  const r = narrow ? 4.6 : 6.2;
+  const w0 = Math.max(280, el.clientWidth);
+  const m = { l: 8, r: narrow ? 30 : 70 };
+  const x = d3.scaleLinear().domain([18, 90]).range([m.l, w0 - m.r]);
+  const ys = dodge(ALL, d => x(d.win), r);
+  const ext = d3.max([...ys.values()].map(Math.abs)) + r;
+  const top = 46, cy = top + ext, axisY = cy + ext + 18, height = axisY + 8;
+  const { svg, w } = svgIn(el, height);
+  // grid
+  [20, 30, 40, 50, 60, 70, 80, 90].forEach(t => svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top - 6).attr('y2', axisY - 14).style('stroke', v('--grid')));
+  xAxis(svg, x, axisY, [20, 30, 40, 50, 60, 70, 80, 90], t => `${t}%`);
+  // forecast band for the crispy cup
+  const bx0 = x(crispyLo), bx1 = x(crispyHi);
+  svg.append('rect').attr('x', bx0 - 3).attr('width', bx1 - bx0 + 6).attr('y', top - 6).attr('height', axisY - 14 - top + 6).attr('rx', 6).style('fill', v('--ours-wash'));
+  svg.append('line').attr('x1', bx0).attr('x2', bx1).attr('y1', top - 10).attr('y2', top - 10).style('stroke', v('--ours')).style('stroke-width', 2);
+  diamond(svg, x(crispy.pred), top - 10, 6, v('--ours'));
+  diamond(svg, x(crispy.rf), top - 10, 6, v('--ours'));
+  svg.append('text').attr('class', 'ann-strong halo').attr('x', (bx0 + bx1) / 2).attr('y', top - 22).attr('text-anchor', 'middle').text(narrow ? 'Crispy Cup' : `The Crispy Cup, ${D.crispyRange}`);
+  // quarter line
+  const qx = x(DATA.quarter);
+  svg.append('line').attr('x1', qx).attr('x2', qx).attr('y1', top - 6).attr('y2', axisY - 14).style('stroke', v('--ink-3')).style('stroke-dasharray', '3 3');
+  svg.append('line').attr('x1', qx).attr('x2', qx).attr('y1', top - 16).attr('y2', top - 6).style('stroke', v('--ink-3')).style('stroke-dasharray', '3 3');
+  svg.append('text').attr('class', 'ann halo').attr('x', qx).attr('y', top - 22).attr('text-anchor', 'middle').text(narrow ? 'Quarter' : `A quarter. ${S.below_quarter} candies lose to it.`);
+  // dots
+  const g = svg.append('g');
+  g.selectAll('circle.d').data(ALL).join('circle').attr('class', 'd')
+    .attr('cx', d => x(d.win)).attr('cy', d => cy + ys.get(d)).attr('r', r)
+    .style('fill', d => d.candy ? v(BASE_VAR[base(d)]) : v('--surface'))
+    .style('stroke', d => d.candy ? v('--surface') : v('--ink-1'))
+    .style('stroke-width', d => d.candy ? 1.5 : 2);
+  // labels for top three and coins
+  const top1 = [...CANDY].sort((a, b) => b.win - a.win)[0];
+  svg.append('text').attr('class', 'lbl2 halo').attr('x', x(top1.win) + r + 5).attr('y', cy + ys.get(top1) + 4).text(narrow ? 'No. 1' : "Reese's PB cup");
+  COINS.forEach(d => {
+    const py = cy + ys.get(d);
+    if (d.name === 'One quarter') return;
+    svg.append('text').attr('class', 'lbl2 halo').attr('x', x(d.win)).attr('y', py + (ys.get(d) >= 0 ? r + 14 : -r - 6)).attr('text-anchor', 'middle').text('Dime');
+  });
+  // hit targets
+  svg.append('g').selectAll('circle').data(ALL).join('circle').attr('class', 'hit')
+    .attr('cx', d => x(d.win)).attr('cy', d => cy + ys.get(d)).attr('r', r + 3).style('fill', 'transparent')
+    .on('pointermove', candyTip).on('pointerleave', untip);
+  legend($('#hero-legend'), [
+    { color: v('--choc'), label: `Chocolate (${S.n_choc})`, shape: 'dot' },
+    { color: v('--fruit'), label: `Fruit, no chocolate (${S.n_fruit})`, shape: 'dot' },
+    { color: v('--other'), label: `Neither (${S.n_neither})`, shape: 'dot' },
+    { label: 'Coin', shape: 'ring' },
+    { color: v('--ours'), label: 'Our forecast', shape: 'diamond' },
+  ]);
+}
+
+// ---------- 2. effects ----------
+let effSel = 'peanutyalmondy';
+function renderEffects() {
+  const el = $('#effects');
+  const rows = [...M.coefs].sort((a, b) => b.b - a.b);
+  const narrow = el.clientWidth < 520;
+  const rowH = 30, top = 22, labW = narrow ? 104 : 150, valW = 44;
+  const height = top + rows.length * rowH + 30;
+  const { svg, w } = svgIn(el, height);
+  const x = d3.scaleLinear().domain([-25, 32]).range([labW + 8, w - valW - 6]);
+  [-20, -10, 0, 10, 20, 30].forEach(t => {
+    svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top - 8).attr('y2', top + rows.length * rowH).style('stroke', t === 0 ? v('--axis') : v('--grid')).style('stroke-width', t === 0 ? 1.5 : 1);
+  });
+  xAxis(svg, x, top + rows.length * rowH + 18, [-20, -10, 0, 10, 20, 30], t => t === 0 ? '0' : F.pts(t));
+  svg.append('text').attr('class', 'lbl2').attr('x', x(-1)).attr('y', top - 10).attr('text-anchor', 'end').text('← lowers win rate');
+  svg.append('text').attr('class', 'lbl2').attr('x', x(1)).attr('y', top - 10).text('raises win rate →');
+  rows.forEach((c, i) => {
+    const y = top + i * rowH + rowH / 2;
+    const clear = c.lo > 0 || c.hi < 0;
+    const on = c.key === effSel;
+    const g = svg.append('g');
+    if (on) g.append('rect').attr('x', 0).attr('y', y - rowH / 2 + 2).attr('width', w).attr('height', rowH - 4).attr('rx', 6).style('fill', v('--hover'));
+    g.append('text').attr('class', on ? 'lbl on' : 'lbl').attr('x', 8).attr('y', y + 4.5).text(narrow ? SHORT[c.key] : c.label);
+    g.append('line').attr('x1', x(Math.max(-25, c.lo))).attr('x2', x(Math.min(32, c.hi))).attr('y1', y).attr('y2', y).style('stroke', clear ? v('--ink-1') : v('--neg')).style('stroke-width', 2).style('stroke-linecap', 'round');
+    const L = LIFT[c.key];
+    if (L) g.append('circle').attr('cx', x(clamp(L.diff, -25, 32))).attr('cy', y).attr('r', 4.5).style('fill', v('--surface')).style('stroke', v('--ink-3')).style('stroke-width', 1.6);
+    g.append('circle').attr('cx', x(c.b)).attr('cy', y).attr('r', 5.5).style('fill', clear ? v('--ink-1') : v('--neg')).style('stroke', v('--surface')).style('stroke-width', 2);
+    g.append('text').attr('class', on ? 'lbl on' : 'lbl').attr('x', w - 4).attr('y', y + 4.5).attr('text-anchor', 'end').text(F.pts1(c.b));
+    svg.append('rect').attr('class', 'hit').attr('x', 0).attr('y', y - rowH / 2).attr('width', w).attr('height', rowH).style('fill', 'transparent')
+      .attr('tabindex', 0).attr('role', 'button').attr('aria-label', `${c.label}: ${F.pts1(c.b)} points`).attr('aria-pressed', String(on))
+      .on('click', () => { effSel = c.key; renderEffects(); renderEffPanel(); })
+      .on('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); effSel = c.key; renderEffects(); renderEffPanel(); } })
+      .on('pointermove', e => tip(e, c.label, [
+        { value: F.pts1(c.b), label: 'points, other traits held fixed' },
+        { value: `${F.pts1(c.lo)} to ${F.pts1(c.hi)}`, label: '95% interval' },
+        ...(L ? [{ value: F.pts1(L.diff), label: 'raw gap, with vs without' }] : []),
+      ])).on('pointerleave', untip);
+  });
+  legend($('#eff-legend'), [
+    { color: v('--ink-1'), label: 'Effect, interval clear of zero', shape: 'dot' },
+    { color: v('--neg'), label: 'Interval crosses zero', shape: 'dot' },
+    { label: 'Raw gap', shape: 'ring', border: v('--ink-3') },
+  ]);
+  registerTable('effects', [{ label: 'Trait' }, { label: 'Effect (points)', num: true }, { label: '95% interval', num: true }, { label: 'p', num: true }, { label: 'Raw gap', num: true }, { label: 'Candies with it', num: true }],
+    rows.map(c => [c.label, F.pts1(c.b), `${F.pts1(c.lo)} to ${F.pts1(c.hi)}`, F.p(c.p), LIFT[c.key] ? F.pts1(LIFT[c.key].diff) : '', LIFT[c.key] ? String(LIFT[c.key].n_with) : '']));
+}
+const EFF_NOTE = {
+  chocolate: c => `The biggest factor in the data. Every one of 4,000 resampled models agrees it helps. This is the base of the Crispy Cup.`,
+  peanutyalmondy: c => `The best add-in we can defend. ${F.pct(B.p_pos.peanutyalmondy)} of resamples say it helps, and the top two candies are peanut butter cups.`,
+  crispedricewafer: c => `A large raw gap, but only 7 candies have it, so the interval is wide. ${F.pct(B.p_pos.crispedricewafer)} of resamples say it helps. This is the bet in our recipe.`,
+  fruity: c => `Positive here only because the comparison is other non-chocolate candy. Real fruit candies average ${F.win(H.fruit_mean)}, against ${F.win(H.choc_mean)} for chocolate.`,
+  sugarpercent: c => `Sweeter candy wins a little more, from least to most sugary. ${F.pct(B.p_pos.sugarpercent)} of resamples agree. The Crispy Cup targets the 75th percentile.`,
+  pricepercent: c => `No clear effect once ingredients are fixed, and the estimate leans negative. Charging more won't buy votes.`,
+  hard: c => `Hard candy loses votes. ${F.pct(1 - B.p_pos.hard)} of resamples say it hurts, though the robust interval just touches zero. Our cup is soft.`,
+  caramel: c => `Popular in big brands, but it adds little once chocolate is counted. It also sits in Snickers Crisper, the biggest miss in the data.`,
+  nougat: c => `Close to zero. Nougat candies do well because they are chocolate bars, not because of the nougat.`,
+  bar: c => `Bars win because they are chocolate. Shape alone adds almost nothing, so we're free to pick a cup.`,
+  pluribus: c => `Pack size doesn't matter once ingredients are counted. One cup per wrapper matches the top two candies.`,
+};
+function renderEffPanel() {
+  const c = COEF[effSel], L = LIFT[effSel];
+  const el = $('#eff-panel'); el.replaceChildren();
+  const h = document.createElement('h3'); h.textContent = c.label; el.appendChild(h);
+  const meta = document.createElement('div'); meta.className = 'meta';
+  meta.textContent = L ? `${L.n_with} of ${S.n} candies have it` : 'Percentile within the set, 0 to 100';
+  el.appendChild(meta);
+  const dl = document.createElement('dl'); dl.className = 'stats';
+  const add = (k, val) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = val; dl.append(dt, dd); };
+  add('Effect, other traits fixed', `${F.pts1(c.b)} pts`);
+  add('95% interval', `${F.pts1(c.lo)} to ${F.pts1(c.hi)}`);
+  add('Resamples where it helps', F.pct(B.p_pos[effSel]));
+  if (L) { add('Raw gap, with vs without', `${F.pts1(L.diff)} pts`); add('Permutation test p', F.p(L.p)); }
+  el.appendChild(dl);
+  const p = document.createElement('p'); p.className = 'verdict'; p.textContent = EFF_NOTE[effSel](c); el.appendChild(p);
+  if (L) {
+    const list = CANDY.filter(d => has(d, effSel)).sort((a, b) => b.win - a.win);
+    const t = document.createElement('div'); t.className = 'panel-title'; t.style.marginTop = '14px'; t.textContent = 'Best and worst candies with it'; el.appendChild(t);
+    const ul = document.createElement('ul'); ul.className = 'clist'; ul.style.marginTop = '0';
+    const show = list.length <= 5 ? list : [...list.slice(0, 3), ...list.slice(-2)];
+    show.forEach((d, i) => {
+      if (list.length > 5 && i === 3) { const li = document.createElement('li'); li.innerHTML = '<span></span><span style="color:var(--ink-4)">…</span><span></span>'; ul.appendChild(li); }
+      ul.appendChild(candyLi(d));
+    });
+    el.appendChild(ul);
+  }
+}
+function candyLi(d, extra) {
+  const li = document.createElement('li');
+  const k = document.createElement('span'); k.className = 'key dot'; k.style.background = v(BASE_VAR[base(d)]);
+  const n = document.createElement('span'); n.textContent = d.name + (extra || '');
+  const w = document.createElement('b'); w.textContent = F.win(d.win);
+  li.append(k, n, w); return li;
+}
+
+// ---------- 3. pair map ----------
+let pairSel = { a: 'peanutyalmondy', b: 'chocolate' };
+function renderPairs() {
+  const el = $('#pairmap');
+  const n = FEAT.length;
+  const narrow = el.clientWidth < 560;
+  const labW = narrow ? 64 : 84, topPad = 8;
+  const cw = Math.min(78, Math.floor((el.clientWidth - labW - 4) / n));
+  const chh = Math.min(44, cw);
+  const height = topPad + chh * n + 26;
+  const { svg, w } = svgIn(el, height);
+  const ramp = isDark() ? ['#17263a', '#1c5cab', '#3987e5', '#9ec5f4'] : ['#dbe9fb', '#86b6ef', '#2a78d6', '#0d366b'];
+  const seq = d3.scaleLinear().domain([35, 50, 62, 75]).range(ramp).interpolate(d3.interpolateLab).clamp(true);
+  const lum = c => { const o = d3.lab(c); return o.l; };
+  FEAT.forEach((a, i) => {
+    svg.append('text').attr('class', 'lbl2').attr('x', labW - 8).attr('y', topPad + i * chh + chh / 2 + 4).attr('text-anchor', 'end').text(SHORT[a]);
+    svg.append('text').attr('class', 'lbl2').attr('x', labW + i * cw + cw / 2).attr('y', topPad + n * chh + 16).attr('text-anchor', 'middle').text(narrow ? SHORT[a].slice(0, 4) : SHORT[a]);
+    FEAT.forEach((b, j) => {
+      if (j > i) return;
+      const p = pairOf(a, b);
+      const x0 = labW + j * cw, y0 = topPad + i * chh;
+      const on = pairSel.a === a && pairSel.b === b;
+      const g = svg.append('g');
+      if (!p || p.n === 0) {
+        g.append('rect').attr('x', x0 + 1).attr('y', y0 + 1).attr('width', cw - 2).attr('height', chh - 2).attr('rx', 4).style('fill', 'none').style('stroke', v('--grid'));
+      } else {
+        const fill = seq(p.mean);
+        g.append('rect').attr('x', x0 + 1).attr('y', y0 + 1).attr('width', cw - 2).attr('height', chh - 2).attr('rx', 4).style('fill', fill)
+          .style('stroke', p.n === 1 ? v('--ink-2') : 'none').style('stroke-dasharray', p.n === 1 ? '3 2' : null).style('stroke-width', 1.2);
+        const dark = lum(fill) < 55;
+        g.append('text').attr('class', 'cell-v').attr('x', x0 + cw / 2).attr('y', y0 + chh / 2 + (chh > 40 ? -1 : 4)).attr('text-anchor', 'middle').style('fill', dark ? '#ffffff' : '#111827').text(Math.round(p.mean));
+        if (chh > 40) g.append('text').attr('class', 'cell-n').attr('x', x0 + cw / 2).attr('y', y0 + chh / 2 + 12).attr('text-anchor', 'middle').style('fill', dark ? 'rgba(255,255,255,.8)' : 'rgba(17,24,39,.7)').text(`n ${p.n}`);
+      }
+      if (on) g.append('rect').attr('x', x0 + 0.5).attr('y', y0 + 0.5).attr('width', cw - 1).attr('height', chh - 1).attr('rx', 5).style('fill', 'none').style('stroke', v('--ink-1')).style('stroke-width', 2.5);
+      svg.append('rect').attr('class', 'hit').attr('x', x0).attr('y', y0).attr('width', cw).attr('height', chh).style('fill', 'transparent')
+        .attr('tabindex', 0).attr('role', 'button').attr('aria-label', `${LBL[a]} with ${LBL[b]}: ${p && p.n ? `${p.n} candies, average ${Math.round(p.mean)}%` : 'no candies'}`)
+        .on('click', () => { pairSel = { a, b }; renderPairs(); renderPairPanel(); })
+        .on('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pairSel = { a, b }; renderPairs(); renderPairPanel(); } })
+        .on('pointermove', e => tip(e, a === b ? LBL[a] : `${LBL[a]} + ${LBL[b]}`, p && p.n ? [{ value: F.win(p.mean), label: 'average win rate' }, { value: String(p.n), label: p.n === 1 ? 'candy' : 'candies' }] : [{ value: 'No candy', label: 'has this pair' }]))
+        .on('pointerleave', untip);
+    });
+  });
+  // gradient legend
+  const lg = $('#pair-legend'); lg.replaceChildren();
+  const s = document.createElement('span');
+  const rmp = isDark() ? ['#17263a', '#1c5cab', '#3987e5', '#9ec5f4'] : ['#dbe9fb', '#86b6ef', '#2a78d6', '#0d366b'];
+  s.innerHTML = `<span style="font-variant-numeric:tabular-nums">35%</span><span class="key" style="width:64px;height:8px;background:linear-gradient(90deg, ${rmp.join(', ')})"></span><span>75%+</span><span class="key" style="width:12px;height:12px;border:1.2px dashed var(--ink-2);background:none;margin-left:10px"></span><span>1 candy</span>`;
+  lg.appendChild(s);
+}
+function renderPairPanel() {
+  const { a, b } = pairSel, p = pairOf(a, b);
+  const el = $('#pair-panel'); el.replaceChildren();
+  const h = document.createElement('h3'); h.textContent = a === b ? LBL[a] : `${LBL[b]} + ${LBL[a].toLowerCase()}`; el.appendChild(h);
+  const meta = document.createElement('div'); meta.className = 'meta';
+  meta.textContent = p && p.n ? `${p.n} ${p.n === 1 ? 'candy' : 'candies'}, average ${F.win(p.mean)}` : 'No candy in the data has this pair';
+  el.appendChild(meta);
+  let note = '';
+  if (p && p.n) {
+    const rest = d3.mean(CANDY.filter(d => !(has(d, a) && has(d, b))), d => d.win);
+    note = p.n === 1 ? `Only one candy has tried this pair, so any forecast for it is a guess.` : `${F.pts(p.mean - rest)} points against candies without the pair.`;
+    if (a === 'fruity' && b === 'chocolate') note = `The host's example. One candy tried it and finished ${ordinal(H.rank)} of ${S.n}. The additive model would still score it high, which is why we test pairs against real candies.`;
+    if (a === 'peanutyalmondy' && b === 'chocolate') note = `The best chocolate pairing with real support. Twelve candies, including the top two in the whole poll.`;
+    if (a === 'crispedricewafer' && b === 'peanutyalmondy') note = `The untested part of the Crispy Cup. The one candy with both, Snickers Crisper, also adds caramel and a bar shape, and it underperformed.`;
+  } else note = 'Nothing to learn here. A recipe that needs this pair is outside the data.';
+  const pv = document.createElement('p'); pv.className = 'verdict'; pv.textContent = note; el.appendChild(pv);
+  if (p && p.n) {
+    const ul = document.createElement('ul'); ul.className = 'clist';
+    const names = p.names.slice(0, 8);
+    names.forEach(nm => ul.appendChild(candyLi(CANDY.find(d => d.name === nm))));
+    if (p.names.length > 8) { const li = document.createElement('li'); li.innerHTML = `<span></span><span class="more">and ${p.names.length - 8} more</span><span></span>`; ul.appendChild(li); }
+    el.appendChild(ul);
+  }
+}
+
+// ---------- 4. price / sugar scatter ----------
+let scKey = 'pricepercent';
+function renderScatter() {
+  const el = $('#scatter');
+  const height = Math.min(380, Math.max(280, el.clientWidth * 0.5));
+  const { svg, w } = svgIn(el, height);
+  const m = { l: 40, r: 12, t: 12, b: 34 };
+  const x = d3.scaleLinear().domain([0, 1]).range([m.l, w - m.r]);
+  const y = d3.scaleLinear().domain([20, 90]).range([height - m.b, m.t]);
+  [20, 40, 60, 80].forEach(t => {
+    svg.append('line').attr('x1', m.l).attr('x2', w - m.r).attr('y1', y(t)).attr('y2', y(t)).style('stroke', v('--grid'));
+    svg.append('text').attr('class', 'tick').attr('x', m.l - 8).attr('y', y(t) + 4).attr('text-anchor', 'end').text(`${t}%`);
+  });
+  xAxis(svg, x, height - m.b + 20, [0, 0.25, 0.5, 0.75, 1], t => t === 0 ? 'Lowest' : t === 1 ? 'Highest' : `${pctileShort(t)} pctile`);
+  // quarter
+  svg.append('line').attr('x1', m.l).attr('x2', w - m.r).attr('y1', y(DATA.quarter)).attr('y2', y(DATA.quarter)).style('stroke', v('--ink-3')).style('stroke-dasharray', '3 3');
+  svg.append('text').attr('class', 'ann halo').attr('x', w - m.r).attr('y', y(DATA.quarter) - 6).attr('text-anchor', 'end').text('A quarter');
+  // fit lines
+  const fit = (rows) => { const xs = rows.map(d => d[scKey === 'pricepercent' ? 'price' : 'sugar']), ys = rows.map(d => d.win); const mx = d3.mean(xs), my = d3.mean(ys); const b = d3.sum(xs, (xi, i) => (xi - mx) * (ys[i] - my)) / d3.sum(xs, xi => (xi - mx) ** 2); return { a: my - b * mx, b, x0: d3.min(xs), x1: d3.max(xs) }; };
+  const key = scKey === 'pricepercent' ? 'price' : 'sugar';
+  const fa = fit(CANDY), fc = fit(CANDY.filter(d => base(d) === 'choc'));
+  svg.append('line').attr('x1', x(fa.x0)).attr('x2', x(fa.x1)).attr('y1', y(fa.a + fa.b * fa.x0)).attr('y2', y(fa.a + fa.b * fa.x1)).style('stroke', v('--ink-3')).style('stroke-width', 2).style('stroke-dasharray', '6 4');
+  svg.append('line').attr('x1', x(fc.x0)).attr('x2', x(fc.x1)).attr('y1', y(fc.a + fc.b * fc.x0)).attr('y2', y(fc.a + fc.b * fc.x1)).style('stroke', v('--choc')).style('stroke-width', 2);
+  const dots = svg.append('g');
+  dots.selectAll('circle').data(CANDY).join('circle').attr('cx', d => x(d[key])).attr('cy', d => y(d.win)).attr('r', 5.5)
+    .style('fill', d => v(BASE_VAR[base(d)])).style('stroke', v('--surface')).style('stroke-width', 1.5);
+  // crispy cup
+  diamond(svg, x(scKey === 'pricepercent' ? crispy.price : crispy.sugar), y(crispy.pred), 7, v('--ours'));
+  svg.append('text').attr('class', 'ann-strong halo').attr('x', x(scKey === 'pricepercent' ? crispy.price : crispy.sugar) + 11).attr('y', y(crispy.pred) + 4).text('Crispy Cup');
+  const mini = CANDY.find(d => d.name === "Reese's Miniatures");
+  svg.append('text').attr('class', 'ann halo').attr('x', x(mini[key]) + 9).attr('y', y(mini.win) + 4).text("Reese's Miniatures");
+  svg.append('g').selectAll('circle').data(CANDY).join('circle').attr('class', 'hit').attr('cx', d => x(d[key])).attr('cy', d => y(d.win)).attr('r', 9).style('fill', 'transparent')
+    .on('pointermove', (e, d) => tip(e, d.name, [{ color: v(BASE_VAR[base(d)]), value: F.win1(d.win), label: 'win rate' }, { value: pctileShort(d[key]), label: scKey === 'pricepercent' ? 'price percentile' : 'sugar percentile' }]))
+    .on('pointerleave', untip);
+  legend($('#sc-legend'), [
+    { color: v('--choc'), label: 'Chocolate', shape: 'dot' }, { color: v('--fruit'), label: 'Fruit', shape: 'dot' }, { color: v('--other'), label: 'Neither', shape: 'dot' },
+    { label: 'Trend, all', shape: 'dash' }, { color: v('--choc'), label: 'Trend, chocolate', shape: 'line' },
+  ]);
+  renderScPanel();
+}
+function renderScPanel() {
+  const el = $('#sc-panel'); el.replaceChildren();
+  const c = COEF[scKey];
+  const isPrice = scKey === 'pricepercent';
+  const h = document.createElement('h3'); h.textContent = isPrice ? 'Price' : 'Sugar'; el.appendChild(h);
+  const meta = document.createElement('div'); meta.className = 'meta'; meta.textContent = isPrice ? 'Unit price percentile within the set' : 'Sugar percentile within the set'; el.appendChild(meta);
+  const dl = document.createElement('dl'); dl.className = 'stats';
+  const add = (k, val) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = val; dl.append(dt, dd); };
+  const cc = CANDY.filter(d => base(d) === 'choc');
+  const corr = (rows, k) => { const xs = rows.map(d => d[k]), ys = rows.map(d => d.win); const mx = d3.mean(xs), my = d3.mean(ys); return d3.sum(xs, (xi, i) => (xi - mx) * (ys[i] - my)) / Math.sqrt(d3.sum(xs, xi => (xi - mx) ** 2) * d3.sum(ys, yi => (yi - my) ** 2)); };
+  const k = isPrice ? 'price' : 'sugar';
+  add('Correlation, all candies', F.r(corr(CANDY, k)));
+  add('Correlation, chocolate only', F.r(corr(cc, k)));
+  add('Effect, ingredients fixed', `${F.pts1(c.b)} pts`);
+  add('95% interval', `${F.pts1(c.lo)} to ${F.pts1(c.hi)}`);
+  add('p', F.p(c.p));
+  el.appendChild(dl);
+  const p = document.createElement('p'); p.className = 'verdict';
+  p.textContent = isPrice
+    ? `Chocolate candies cost more (${pctileShort(P.choc_price)} percentile on average, against ${pctileShort(P.other_price)} for the rest), and that is most of the price link. Reese's Miniatures won ${F.win(CANDY.find(d => d.name === "Reese's Miniatures").win)} at the ${pctileShort(CANDY.find(d => d.name === "Reese's Miniatures").price)} percentile. We price the Crispy Cup in the middle.`
+    : `Sugar is one of only four effects with an interval clear of zero. It helps, but it isn't required: Reese's Miniatures sits near the bottom on sugar and still ranks second. The Crispy Cup aims for the 75th percentile.`;
+  el.appendChild(p);
+}
+$$('#price .ctabs button').forEach(btn => btn.addEventListener('click', () => {
+  scKey = btn.dataset.tab;
+  $$('#price .ctabs button').forEach(b => { const on = b === btn; b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1; });
+  renderScatter();
+}));
+$('#price .ctabs').addEventListener('keydown', e => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const tabs = $$('#price .ctabs button'); const i = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+  const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); n.click(); e.preventDefault();
+});
+
+// ---------- 5. traps ----------
+function renderHybrid() {
+  const el = $('#hybrid');
+  const rows = [
+    { label: 'Chocolate candies, average', val: H.choc_mean, kind: 'choc' },
+    { label: 'Fruit candies, average', val: H.fruit_mean, kind: 'fruit' },
+    { label: 'Tootsie Pop, forecast', val: H.pred_loo, kind: 'fore' },
+    { label: 'Tootsie Pop, actual', val: H.win, kind: 'act' },
+  ];
+  const narrow = el.clientWidth < 420;
+  const rowH = 32, top = 10, labW = narrow ? 130 : 168;
+  const height = top + rows.length * rowH + 28;
+  const { svg, w } = svgIn(el, height);
+  const x = d3.scaleLinear().domain([35, 75]).range([labW + 8, w - 34]);
+  [40, 50, 60, 70].forEach(t => svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top).attr('y2', top + rows.length * rowH).style('stroke', v('--grid')));
+  xAxis(svg, x, top + rows.length * rowH + 18, [40, 50, 60, 70], t => `${t}%`);
+  svg.append('line').attr('x1', x(DATA.quarter)).attr('x2', x(DATA.quarter)).attr('y1', top).attr('y2', top + rows.length * rowH).style('stroke', v('--ink-3')).style('stroke-dasharray', '3 3');
+  svg.append('text').attr('class', 'lbl2 halo').attr('x', x(DATA.quarter) + 4).attr('y', top + 10).text('Quarter');
+  rows.forEach((r, i) => {
+    const y = top + i * rowH + rowH / 2;
+    svg.append('text').attr('class', r.kind === 'act' ? 'lbl on' : 'lbl').attr('x', 0).attr('y', y + 4.5).text(r.label);
+    if (r.kind === 'fore') svg.append('circle').attr('cx', x(r.val)).attr('cy', y).attr('r', 6).style('fill', v('--surface')).style('stroke', v('--ink-1')).style('stroke-width', 2);
+    else svg.append('circle').attr('cx', x(r.val)).attr('cy', y).attr('r', 6.5).style('fill', r.kind === 'act' ? v('--ink-1') : v(BASE_VAR[r.kind])).style('stroke', v('--surface')).style('stroke-width', 2);
+    svg.append('text').attr('class', 'lbl2').attr('x', r.kind === 'act' ? x(r.val) - 11 : x(r.val) + 11).attr('y', y + 4).attr('text-anchor', r.kind === 'act' ? 'end' : 'start').text(F.win(r.val));
+  });
+  // connector forecast -> actual
+  const y1 = top + 2 * rowH + rowH / 2, y2 = top + 3 * rowH + rowH / 2;
+  svg.append('path').attr('d', `M${x(H.pred_loo)},${y1 + 8} V${y2} H${x(H.win) + 9}`).style('fill', 'none').style('stroke', v('--ink-3')).style('stroke-width', 1.4).style('stroke-dasharray', '3 3');
+  svg.append('text').attr('class', 'ann-strong halo').attr('x', (x(H.pred_loo) + x(H.win)) / 2).attr('y', y2 - 7).attr('text-anchor', 'middle').text(`${F.pts(H.win - H.pred_loo)} pts`);
+}
+function renderAddins() {
+  const el = $('#addins');
+  const height = 210;
+  const { svg, w } = svgIn(el, height);
+  const m = { l: 40, r: 12, t: 10, b: 30 };
+  const x = d3.scaleBand().domain([0, 1, 2, 3]).range([m.l, w - m.r]).padding(0.25);
+  const y = d3.scaleLinear().domain([30, 90]).range([height - m.b, m.t]);
+  [40, 60, 80].forEach(t => {
+    svg.append('line').attr('x1', m.l).attr('x2', w - m.r).attr('y1', y(t)).attr('y2', y(t)).style('stroke', v('--grid'));
+    svg.append('text').attr('class', 'tick').attr('x', m.l - 8).attr('y', y(t) + 4).attr('text-anchor', 'end').text(`${t}%`);
+  });
+  DATA.addins.forEach(a => {
+    svg.append('text').attr('class', 'tick').attr('x', x(a.count) + x.bandwidth() / 2).attr('y', height - m.b + 18).attr('text-anchor', 'middle').text(`${a.count} add-in${a.count === 1 ? '' : 's'} (${a.n})`);
+    const cx = x(a.count) + x.bandwidth() / 2;
+    const ys = dodge(a.candies, d => y(d.win), 4.5, 1);
+    a.candies.forEach(d => {
+      const cand = CANDY.find(c => c.name === d.name);
+      const isC = d.name === 'Snickers Crisper';
+      svg.append('circle').attr('cx', cx + ys.get(d)).attr('cy', y(d.win)).attr('r', 4.5).style('fill', v('--choc')).style('stroke', isC ? v('--ink-1') : v('--surface')).style('stroke-width', isC ? 2 : 1.2);
+      svg.append('circle').attr('class', 'hit').attr('cx', cx + ys.get(d)).attr('cy', y(d.win)).attr('r', 8).style('fill', 'transparent')
+        .on('pointermove', e => candyTip(e, cand)).on('pointerleave', untip);
+      if (isC) svg.append('text').attr('class', 'ann halo').attr('x', cx + ys.get(d) - 10).attr('y', y(d.win) + 4).attr('text-anchor', 'end').text('Snickers Crisper');
+    });
+    svg.append('line').attr('x1', cx - x.bandwidth() / 2.4).attr('x2', cx + x.bandwidth() / 2.4).attr('y1', y(a.mean)).attr('y2', y(a.mean)).style('stroke', v('--ink-1')).style('stroke-width', 2.5).style('stroke-linecap', 'round');
+    svg.append('text').attr('class', 'ann-strong halo').attr('x', cx + x.bandwidth() / 2.4 + 4).attr('y', y(a.mean) + 4).text(F.win(a.mean));
+  });
+}
+
+// ---------- 6. our candy ----------
+function renderWhy() {
+  const t = $('#why'); t.replaceChildren();
+  const rows = [
+    ['Chocolate base', `${F.pts(COEF.chocolate.b)} points, the largest effect`, F.pct(B.p_pos.chocolate)],
+    ['Peanut butter filling', `${F.pts(COEF.peanutyalmondy.b)} points. The top two candies are PB cups`, F.pct(B.p_pos.peanutyalmondy)],
+    ['Crisped rice', `${F.pts(COEF.crispedricewafer.b)} in the regression, about 0 in the forest`, F.pct(B.p_pos.crispedricewafer)],
+    ['One cup per wrapper', 'Shape and pack size barely matter', 'n/a'],
+    ['Soft, not hard', `Hard candy costs about ${Math.abs(Math.round(COEF.hard.b))} points`, F.pct(1 - B.p_pos.hard)],
+    ['Sweet, 75th percentile', `${F.pts(COEF.sugarpercent.b)} points from least to most sugary`, F.pct(B.p_pos.sugarpercent)],
+    ['Middle price', 'No clear effect once ingredients are fixed', 'n/a'],
+  ];
+  const tb = t.createTBody();
+  rows.forEach(r => { const tr = tb.insertRow(); r.forEach(c => { const td = tr.insertCell(); td.textContent = c; }); });
+  const cap = t.createCaption(); cap.textContent = 'Why each choice. The right column is the share of 4,000 resampled models that agree.'; cap.style.cssText = 'text-align:left;font-size:12.5px;color:var(--ink-3);padding:12px 0 2px';
+}
+const VERDICT = {
+  crispy: r => 'Our pick. Top tier on both models.',
+  cup: r => "Proven, but Reese's already owns it.",
+  hybrid: r => `Rejected. The one real example finished ${ordinal(H.rank)}.`,
+  sink: r => `Rejected. No candy has nougat with crisp. The forest drops it to ${F.win(r.rf)}.`,
+  fruit: r => 'Best without chocolate, but it lands near a quarter.',
+};
+function renderLineup() {
+  const el = $('#lineup-chart');
+  const rows = DATA.lineup;
+  const narrow = el.clientWidth < 480;
+  const rowH = 30, top = 18, labW = narrow ? 112 : 168;
+  const height = top + rows.length * rowH + 26;
+  const { svg, w } = svgIn(el, height);
+  const x = d3.scaleLinear().domain([35, 100]).range([labW + 8, w - 12]);
+  [40, 50, 60, 70, 80, 90, 100].forEach(t => svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top - 4).attr('y2', top + rows.length * rowH).style('stroke', v('--grid')));
+  xAxis(svg, x, top + rows.length * rowH + 18, [40, 50, 60, 70, 80, 90, 100], t => `${t}%`);
+  const best = d3.max(CANDY, d => d.win);
+  svg.append('line').attr('x1', x(best)).attr('x2', x(best)).attr('y1', top - 4).attr('y2', top + rows.length * rowH).style('stroke', v('--ink-3')).style('stroke-dasharray', '3 3');
+  svg.append('text').attr('class', 'lbl2 halo').attr('x', x(best)).attr('y', top - 8).attr('text-anchor', 'middle').text(narrow ? 'No. 1' : 'Best real candy');
+  svg.append('line').attr('x1', x(DATA.quarter)).attr('x2', x(DATA.quarter)).attr('y1', top - 4).attr('y2', top + rows.length * rowH).style('stroke', v('--ink-3')).style('stroke-dasharray', '3 3');
+  svg.append('text').attr('class', 'lbl2 halo').attr('x', x(DATA.quarter)).attr('y', top - 8).attr('text-anchor', 'middle').text('Quarter');
+  rows.forEach((r, i) => {
+    const y = top + i * rowH + rowH / 2;
+    const pick = r.id === 'crispy';
+    if (pick) svg.append('rect').attr('x', 0).attr('y', y - rowH / 2 + 2).attr('width', w).attr('height', rowH - 4).attr('rx', 6).style('fill', v('--ours-wash'));
+    svg.append('text').attr('class', pick ? 'lbl on' : 'lbl').attr('x', 8).attr('y', y + 4.5).text(narrow ? r.name.replace('Plain peanut butter cup', 'Plain PB cup').replace('Chocolate and fruit', 'Choc + fruit') : r.name);
+    svg.append('line').attr('x1', x(clamp(r.lo, 35, 100))).attr('x2', x(clamp(r.hi, 35, 100))).attr('y1', y).attr('y2', y).style('stroke', pick ? v('--ours') : v('--neg')).style('stroke-width', 2).style('stroke-linecap', 'round');
+    svg.append('line').attr('x1', x(r.pred)).attr('x2', x(r.rf)).attr('y1', y).attr('y2', y).style('stroke', pick ? v('--ours') : v('--ink-3')).style('stroke-width', 4).style('stroke-linecap', 'round').style('opacity', .5);
+    svg.append('circle').attr('cx', x(r.rf)).attr('cy', y).attr('r', 5.5).style('fill', v('--surface')).style('stroke', pick ? v('--ours') : v('--ink-1')).style('stroke-width', 2);
+    if (pick) diamond(svg, x(r.pred), y, 7, v('--ours'));
+    else svg.append('circle').attr('cx', x(r.pred)).attr('cy', y).attr('r', 6).style('fill', v('--ink-1')).style('stroke', v('--surface')).style('stroke-width', 2);
+    svg.append('rect').attr('class', 'hit').attr('x', 0).attr('y', y - rowH / 2).attr('width', w).attr('height', rowH).style('fill', 'transparent')
+      .on('pointermove', e => tip(e, r.name, [
+        { value: F.win(r.pred), label: `regression (${ordinal(rankOf(r.pred))} of ${S.n})` },
+        { value: `${F.win(r.lo)} to ${F.win(r.hi)}`, label: '95% interval' },
+        { value: F.win(r.rf), label: `random forest (${ordinal(rankOf(r.rf))} of ${S.n})` },
+        { value: `${r.nearest[0].name}, ${F.win(r.nearest[0].win)}`, label: 'closest real' },
+      ])).on('pointerleave', untip);
+  });
+  legend($('#lu-legend'), [
+    { color: v('--ink-1'), label: 'Regression', shape: 'dot' },
+    { label: 'Random forest', shape: 'ring' },
+  ]);
+  // table
+  const t = $('#lineup'); t.replaceChildren();
+  const head = t.createTHead().insertRow();
+  ['Recipe', 'Least-tried pair', 'Verdict'].forEach(h => { const th = document.createElement('th'); th.textContent = h; head.appendChild(th); });
+  const tb = t.createTBody();
+  rows.forEach(r => {
+    const tr = tb.insertRow(); if (r.id === 'crispy') tr.className = 'pick';
+    const a = tr.insertCell(); a.className = 'nm'; a.textContent = r.name; const role = document.createElement('span'); role.textContent = r.role; a.appendChild(role);
+    const c = tr.insertCell(); c.dataset.label = 'Least-tried pair'; c.textContent = r.weakest ? `${SHORT[r.weakest.a]} + ${SHORT[r.weakest.b].toLowerCase()} (${r.weakest.n})` : '';
+    const d = tr.insertCell(); d.dataset.label = 'Verdict'; d.textContent = VERDICT[r.id](r);
+  });
+}
+
+// ---------- 7. lab ----------
+const LAB = { on: new Set(crispy.on), sugar: 75, price: 50 };
+const PRESETS = [
+  { id: 'crispy', label: 'Crispy Cup' }, { id: 'hybrid', label: "Host's chocolate + fruit" }, { id: 'sink', label: 'Everything bar' }, { id: 'cup', label: "Reese's recipe" }, { id: 'clear', label: 'Clear' },
+];
+function buildLab() {
+  const chips = $('#chips');
+  FEAT.forEach(f => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.dataset.f = f;
+    b.innerHTML = `<span></span><span class="pts"></span>`;
+    b.firstChild.textContent = LBL[f]; b.lastChild.textContent = F.pts(COEF[f].b);
+    b.addEventListener('click', () => { LAB.on.has(f) ? LAB.on.delete(f) : LAB.on.add(f); renderLab(); });
+    chips.appendChild(b);
+  });
+  $('#sugar').value = LAB.sugar; $('#pricein').value = LAB.price;
+  $('#sugar').addEventListener('input', e => { LAB.sugar = +e.target.value; renderLab(); });
+  $('#pricein').addEventListener('input', e => { LAB.price = +e.target.value; renderLab(); });
+  const pr = $('#presets');
+  PRESETS.forEach(p => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = p.label;
+    b.addEventListener('click', () => {
+      if (p.id === 'clear') { LAB.on = new Set(); LAB.sugar = 50; LAB.price = 50; }
+      else { const r = LU[p.id]; LAB.on = new Set(r.on); LAB.sugar = Math.round(r.sugar * 100); LAB.price = Math.round(r.price * 100); }
+      $('#sugar').value = LAB.sugar; $('#pricein').value = LAB.price; renderLab();
+    });
+    pr.appendChild(b);
+  });
+}
+function renderLab() {
+  $$('#chips .chip').forEach(b => b.setAttribute('aria-pressed', String(LAB.on.has(b.dataset.f))));
+  $('#sugar-out').textContent = `${ordinal(LAB.sugar)} percentile`;
+  $('#price-out').textContent = `${ordinal(LAB.price)} percentile`;
+  const s = LAB.sugar / 100, p = LAB.price / 100;
+  const r = predict(xvec(LAB.on, s, p));
+  $('#lab-pred').textContent = r.p > 99.5 ? '>99%' : F.win(r.p);
+  $('#lab-ci').textContent = `${F.win(r.lo)} to ${F.win(r.hi)}`;
+  const rk = rankOf(r.p);
+  $('#lab-rank').textContent = rk === 1 ? '1st, above every candy' : ordinal(rk);
+  $('#lab-q').textContent = F.pct(phi((r.p - DATA.quarter) / r.se));
+  // strip
+  const el = $('#lab-strip');
+  const height = 74;
+  const { svg, w } = svgIn(el, height);
+  const x = d3.scaleLinear().domain([18, 100]).range([6, w - 6]);
+  [20, 40, 60, 80, 100].forEach(t => svg.append('text').attr('class', 'tick').attr('x', x(t)).attr('y', height - 2).attr('text-anchor', 'middle').text(`${t}%`));
+  svg.append('rect').attr('x', x(clamp(r.lo, 18, 100))).attr('width', Math.max(2, x(clamp(r.hi, 18, 100)) - x(clamp(r.lo, 18, 100)))).attr('y', 14).attr('height', 34).attr('rx', 5).style('fill', v('--ours-wash'));
+  svg.selectAll('line.c').data(CANDY).join('line').attr('class', 'c').attr('x1', d => x(d.win)).attr('x2', d => x(d.win)).attr('y1', 20).attr('y2', 42).style('stroke', d => v(BASE_VAR[base(d)])).style('stroke-width', 2);
+  svg.append('line').attr('x1', x(DATA.quarter)).attr('x2', x(DATA.quarter)).attr('y1', 12).attr('y2', 50).style('stroke', v('--ink-1')).style('stroke-dasharray', '2 2');
+  svg.append('text').attr('class', 'lbl2 halo').attr('x', x(DATA.quarter)).attr('y', 9).attr('text-anchor', 'middle').text('Quarter');
+  const px = x(clamp(r.p, 18, 100));
+  diamond(svg, px, 31, 8, v('--ours'));
+  svg.append('g').selectAll('rect').data(CANDY).join('rect').attr('class', 'hit').attr('x', d => x(d.win) - 3).attr('width', 6).attr('y', 18).attr('height', 26).style('fill', 'transparent')
+    .on('pointermove', candyTip).on('pointerleave', untip);
+  // warnings
+  const on = FEAT.filter(f => LAB.on.has(f));
+  const rare = [];
+  for (let i = 0; i < on.length; i++) for (let j = i + 1; j < on.length; j++) { const n = pairCount(on[i], on[j]); if (n <= 1) rare.push({ a: on[i], b: on[j], n }); }
+  const wEl = $('#lab-warn'); wEl.replaceChildren();
+  const box = document.createElement('div'); box.className = rare.length ? 'warn' : 'warn ok';
+  if (rare.length) {
+    const list = rare.slice(0, 4).map(q => `${SHORT[q.a].toLowerCase()} + ${SHORT[q.b].toLowerCase()} (${q.n === 0 ? 'no candy' : '1 candy'})`).join(', ');
+    const none = rare.some(q => q.n === 0);
+    box.innerHTML = none ? '<b>Treat this forecast as a guess.</b> ' : '<b>Thin evidence.</b> ';
+    box.appendChild(document.createTextNode(`Real candies have ${none ? 'rarely or never' : 'rarely'} tried ${list}${rare.length > 4 ? ', and more' : ''}. The model adds the bonuses anyway, but ${none ? 'nothing in the data checks' : 'only one candy checks'} the result.`));
+  } else if (on.length) {
+    box.textContent = 'Every pair of traits in this recipe appears in at least two real candies, so the forecast rests on real examples.';
+  } else box.textContent = 'No traits picked. This is a candy with none of the nine traits.';
+  wEl.appendChild(box);
+  const ul = $('#lab-near'); ul.replaceChildren();
+  nearestReal(LAB.on, s).forEach(({ d, dist }) => ul.appendChild(candyLi(d, dist === 0 ? ' · same traits' : ` · ${dist} trait${dist === 1 ? '' : 's'} off`)));
+}
+
+// ---------- 8. residuals ----------
+function renderResid() {
+  const el = $('#resid');
+  const sorted = [...CANDY].sort((a, b) => b.resid - a.resid);
+  const rows = [...sorted.slice(0, 5), ...sorted.slice(-5).reverse()];
+  const narrow = el.clientWidth < 480;
+  const rowH = 27, top = 8, labW = narrow ? 120 : 176, gap = 14;
+  const height = top + rows.length * rowH + gap + 28;
+  const { svg, w } = svgIn(el, height);
+  const x = d3.scaleLinear().domain([20, 90]).range([labW + 8, w - 40]);
+  const yOf = i => top + i * rowH + rowH / 2 + (i >= 5 ? gap : 0);
+  [20, 40, 60, 80].forEach(t => svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top).attr('y2', yOf(9) + rowH / 2).style('stroke', v('--grid')));
+  xAxis(svg, x, yOf(9) + rowH / 2 + 18, [20, 40, 60, 80], t => `${t}%`);
+  svg.append('text').attr('class', 'lbl2').attr('x', 0).attr('y', top + 2).text('');
+  rows.forEach((d, i) => {
+    const y = yOf(i);
+    svg.append('text').attr('class', 'lbl').attr('x', 0).attr('y', y + 4.5).text(d.name.length > 24 && narrow ? d.name.slice(0, 15) + '…' : d.name);
+    svg.append('line').attr('x1', x(d.pred)).attr('x2', x(d.win)).attr('y1', y).attr('y2', y).style('stroke', v('--axis')).style('stroke-width', 2);
+    svg.append('circle').attr('cx', x(d.pred)).attr('cy', y).attr('r', 5).style('fill', v('--surface')).style('stroke', v('--ink-3')).style('stroke-width', 1.8);
+    svg.append('circle').attr('cx', x(d.win)).attr('cy', y).attr('r', 6).style('fill', v(BASE_VAR[base(d)])).style('stroke', v('--surface')).style('stroke-width', 2);
+    const right = Math.max(d.pred, d.win);
+    svg.append('text').attr('class', 'lbl2').attr('x', x(right) + 10).attr('y', y + 4).text(F.pts(d.resid));
+    svg.append('rect').attr('class', 'hit').attr('x', 0).attr('y', y - rowH / 2).attr('width', w).attr('height', rowH).style('fill', 'transparent')
+      .on('pointermove', e => tip(e, d.name, [{ value: F.win(d.pred), label: 'forecast from its recipe' }, { color: v(BASE_VAR[base(d)]), value: F.win(d.win), label: 'actual' }])).on('pointerleave', untip);
+  });
+  legend($('#res-legend'), [{ label: 'Recipe forecast', shape: 'ring', border: v('--ink-3') }, { color: v('--choc'), label: 'Actual, chocolate', shape: 'dot' }, { color: v('--fruit'), label: 'Actual, fruit', shape: 'dot' }, { color: v('--other'), label: 'Actual, neither', shape: 'dot' }]);
+  registerTable('all', [{ label: 'Item' }, { label: 'Win rate', num: true }, { label: 'Traits' }, { label: 'Sugar pctile', num: true }, { label: 'Price pctile', num: true }, { label: 'Recipe forecast', num: true }],
+    [...ALL].sort((a, b) => b.win - a.win).map(d => [d.name, F.win1(d.win), d.candy ? traitText(d) : 'coin', String(Math.round(d.sugar * 100)), String(Math.round(d.price * 100)), d.candy ? F.win1(d.pred) : '']));
+}
+
+// ---------- screens, chapters, theme ----------
+const steps = $$('.step');
+let cur = 0;
+const chapterLinks = $$('.chapters a');
+function setCurrent(i) {
+  cur = i;
+  $('#stepnum').textContent = `${i + 1} / ${steps.length}`;
+  $('#prev').disabled = i === 0; $('#next').disabled = i === steps.length - 1;
+  const ch = steps[i].dataset.ch;
+  chapterLinks.forEach(a => a.setAttribute('aria-current', String(a.dataset.ch === ch)));
+}
+const stepIO = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) setCurrent(steps.indexOf(en.target)); }), { rootMargin: '-45% 0px -50% 0px' });
+steps.forEach(s => stepIO.observe(s));
+function go(i) { i = clamp(i, 0, steps.length - 1); steps[i].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+$('#prev').addEventListener('click', () => go(cur - 1));
+$('#next').addEventListener('click', () => go(cur + 1));
+document.addEventListener('keydown', e => {
+  if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.target.closest('input, select, textarea, [role="tab"]')) return;
+  if (e.key === 'ArrowRight' || e.key === 'j') { e.preventDefault(); go(cur + 1); }
+  if (e.key === 'ArrowLeft' || e.key === 'k') { e.preventDefault(); go(cur - 1); }
+});
+const themeBtn = $('#theme');
+const isDark = () => document.documentElement.dataset.theme ? document.documentElement.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+const syncTheme = () => { const d = isDark(); themeBtn.dataset.mode = d ? 'dark' : 'light'; themeBtn.setAttribute('aria-label', d ? 'Switch to light theme' : 'Switch to dark theme'); };
+themeBtn.addEventListener('click', () => { document.documentElement.dataset.theme = isDark() ? 'light' : 'dark'; syncTheme(); renderPairs(); });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { syncTheme(); renderPairs(); });
+
+function renderAll() {
+  renderHero(); renderEffects(); renderPairs(); renderScatter(); renderHybrid(); renderAddins(); renderLineup(); renderLab(); renderResid();
+}
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderAll, 150); });
+
+bind(); syncTheme(); setCurrent(0);
+renderWhy(); buildLab(); renderEffPanel(); renderPairPanel();
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(renderAll);
+})();
+</script>
+</body>
+</html>
