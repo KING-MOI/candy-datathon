@@ -1,4 +1,4 @@
-"""Halloween candy analysis: which candy should we make?
+"""Candy analysis: which candy should we make?
 
 Reads data/candy-data.csv (Kaggle: fivethirtyeight/the-ultimate-halloween-candy-power-ranking).
 Writes build/data.json and site/index.html (one file, works offline).
